@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../servicios/auth.service';
+import { Router } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +15,9 @@ export class NavbarComponent implements OnInit {
   public email : string;
 
   constructor(
-  		public authService : AuthService
+  		public authService : AuthService,
+      public flashMessage : FlashMessagesService,
+      public router : Router,
   	) { }
 
   ngOnInit() { 
@@ -31,6 +35,7 @@ export class NavbarComponent implements OnInit {
 
   onClickLogout(){
   	this.authService.logout();
+    this.router.navigate(['/']);
   }
 
 }
