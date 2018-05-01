@@ -40,4 +40,13 @@ export class LoginPageComponent implements OnInit {
   	});
   }
 
+  onClickGoogleLogin(){
+    this.authService.loginGoogle()
+    .then((res) => {
+      this.router.navigate(['/index-home']);
+    }).catch((err) => {
+      console.log(err.message);
+    });
+  }
+
 }

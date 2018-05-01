@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase/auth';
+import * as firebase from 'firebase/app';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -9,6 +10,11 @@ export class AuthService {
   constructor(
   	public afAuth: AngularFireAuth
   ) { }
+
+  loginGoogle(){
+    var provider = new firebase.auth.GoogleAuthProvider();
+    return this.afAuth.auth.signInWithPopup(provider);
+  }
 
   registerUser(email: string, pass: string){
   	return new Promise((resolve, reject) => {
@@ -34,6 +40,8 @@ export class AuthService {
   logout(){
   	return this.afAuth.auth.signOut();
   }
+
+
 
 
 }
