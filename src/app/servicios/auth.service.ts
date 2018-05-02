@@ -16,6 +16,16 @@ export class AuthService {
     return this.afAuth.auth.signInWithPopup(provider);
   }
 
+  loginFacebook(){
+    var provider = new firebase.auth.FacebookAuthProvider();
+    return this.afAuth.auth.signInWithPopup(provider);
+  }
+
+  loginTwitter(){
+    var provider = new firebase.auth.TwitterAuthProvider();
+    return this.afAuth.auth.signInWithPopup(provider);
+  }
+
   registerUser(email: string, pass: string){
   	return new Promise((resolve, reject) => {
   		this.afAuth.auth.createUserWithEmailAndPassword(email, pass)

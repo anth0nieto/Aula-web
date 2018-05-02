@@ -49,4 +49,22 @@ export class LoginPageComponent implements OnInit {
     });
   }
 
+  onClickFacebookLogin(){
+    this.authService.loginFacebook()
+    .then((res) => {
+      this.router.navigate(['/index-home']);
+    }).catch((err) => {
+      console.log(err.message);
+    });
+  }
+
+  onClickTwitterLogin(){
+    this.authService.loginTwitter()
+    .then((res) => {
+      this.router.navigate(['/index-home']);
+    }).catch((err) => {
+      console.log(err.message);
+    });
+  }
+
 }
