@@ -1,40 +1,42 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">Aula-web</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<mat-toolbar color="primary">
 
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#" routerLink="/">Home
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
-    </ul>
+  <mat-menu><mat-icon>dehaze</mat-icon></mat-menu>
+  <span>Aula-app</span>
 
-    <ul class="navbar-nav mx-auto">
-      <li class="nav-item active" *ngIf="!isLogin">
-        <a class="nav-link" href="#" routerLink="/login">Login</a>
-      </li>
-      <li class="nav-item" *ngIf="!isLogin">
-        <a class="nav-link" href="#" routerLink="/register">Registrarse</a>
-      </li>
-      <li class="nav-item" *ngIf="isLogin">
-        <a class="nav-link" href="/" (click)="onClickLogout()">Salir</a>
-      </li>
-
-      <li class="nav-item" *ngIf="isLogin">
-        <a class="nav-link">{{username}}</a>
-      </li>
-
-      <li class="nav-item" *ngIf="isLogin">
-        <img src="{{fotoUsuario}}" class="rounded-circle">
-        <span class="badge pill badge-secondary">{{email}}</span>
-      </li>
       
+      <div class="container-fluid" align="right">
+
+          <button mat-button routerLink="/">
+            <mat-icon>home</mat-icon>Home
+          </button>
+          
+
+                <button mat-button *ngIf="!isLogin" routerLink="/login">
+                  <mat-icon>account_circle</mat-icon> Login  
+                </button>
+          
+                <button mat-button routerLink="/register">
+                    <mat-icon>input</mat-icon> Registrarse
+                </button>
+
+                <button mat-button *ngIf="isLogin" (click)="onClickLogout()">
+                    <mat-icon>exit_to_app</mat-icon> Salir
+                </button>
+
+                <button mat-button *ngIf="isLogin">
+                    <a class="nav-link">{{username}}</a>
+                </button>
+
+                <button mat-button *ngIf="isLogin">
+                    <img src="{{fotoUsuario}}" class="rounded-circle">
+                    <span class="badge pill badge-secondary">{{email}}</span>
+                </button>
+         
+          
+
+      </div>
       
-    </ul>
-  </div>
-</nav>
+
+</mat-toolbar>
+
+

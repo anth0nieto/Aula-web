@@ -16,8 +16,13 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { AuthGuard } from './guards/auth.guard';
 import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messages';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -36,6 +41,13 @@ import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messag
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FlashMessagesModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule,
   ],
   providers: [AuthService, AuthGuard, FlashMessagesService],
   bootstrap: [AppComponent]
