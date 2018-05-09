@@ -5,12 +5,14 @@ import { LoginPageComponent } from './componentes/login-page/login-page.componen
 import { RegisterPageComponent } from './componentes/register-page/register-page.component';
 import { IndexHomePageComponent } from './componentes/index-home-page/index-home-page.component';
 import { NotFoundPageComponent } from './componentes/not-found-page/not-found-page.component';
+import { ResetPasswordComponent } from './componentes/reset-password/reset-password.component';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
   {path: 'login', component: LoginPageComponent},
   {path: 'register', component: RegisterPageComponent},
+  {path: 'resetPassword', component: ResetPasswordComponent},
   {path: 'index-home', component: IndexHomePageComponent, canActivate: [AuthGuard]},
   {path: '**', component: NotFoundPageComponent}
 ];

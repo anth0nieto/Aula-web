@@ -10,6 +10,7 @@ import { RegisterPageComponent } from './componentes/register-page/register-page
 import { LoginPageComponent } from './componentes/login-page/login-page.component';
 import { IndexHomePageComponent } from './componentes/index-home-page/index-home-page.component';
 import { NotFoundPageComponent } from './componentes/not-found-page/not-found-page.component';
+import { ResetPasswordComponent } from './componentes/reset-password/reset-password.component';
 import { AuthService } from './servicios/auth.service';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -24,6 +25,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,8 @@ import {MatInputModule} from '@angular/material/input';
     RegisterPageComponent,
     LoginPageComponent,
     IndexHomePageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,

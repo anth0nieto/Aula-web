@@ -4,15 +4,22 @@
       <div class="card-body">
         <h1 class="text-center">Login</h1>
         <form class="example-form" (submit)="onSubmitLogin()">
+
           <mat-form-field >
             <input matInput placeholder="Email" name="email" id="email" [(ngModel)]="email">
           </mat-form-field>
           
           <mat-form-field>
-            <input matInput placeholder="Password" type="password" name="password" id="password" [(ngModel)]="password">
+            <input matInput placeholder="Password" color="white" type="password" name="password" id="password" [(ngModel)]="password">
           </mat-form-field>
 
-          <input type="submit" value="Enviar" class="btn btn-primary btn-block btn-lg">
+          <button mat-button >
+            <mat-icon align="left">send</mat-icon>Enviar
+          </button>
+
+          <div>
+            <p> <a routerLink="/resetPassword"> ¿Olvido su contraseña?</a></p>  
+          </div>
         </form>
       </div>
     </div>

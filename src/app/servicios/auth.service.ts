@@ -11,6 +11,11 @@ export class AuthService {
   	public afAuth: AngularFireAuth
   ) { }
 
+  resetPassword(email: string){
+    return this.afAuth.auth.sendPasswordResetEmail(email);
+  }
+
+
   loginGoogle(){
     var provider = new firebase.auth.GoogleAuthProvider();
     return this.afAuth.auth.signInWithPopup(provider);
