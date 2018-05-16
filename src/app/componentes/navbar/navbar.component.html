@@ -1,0 +1,42 @@
+<mat-toolbar color="primary">
+
+  <mat-menu><mat-icon>dehaze</mat-icon></mat-menu>
+  <span>Aula-app</span>
+
+      
+      <div class="container-fluid" align="right">
+
+          <button mat-button routerLink="/">
+            <mat-icon>home</mat-icon>Home
+          </button>
+          
+
+                <button mat-button *ngIf="!isLogin" routerLink="/login">
+                  <mat-icon>account_circle</mat-icon> Login  
+                </button>
+          
+                <button mat-button routerLink="/register">
+                    <mat-icon>input</mat-icon> Registrarse
+                </button>
+
+                <button mat-button *ngIf="isLogin" (click)="onClickLogout()">
+                    <mat-icon>exit_to_app</mat-icon> Salir
+                </button>
+
+                <button mat-button *ngIf="isLogin">
+                    <a class="nav-link">{{username}}</a>
+                </button>
+
+                <button mat-button *ngIf="isLogin">
+                    <img src="{{fotoUsuario}}" class="rounded-circle">
+                    <span class="badge pill badge-secondary">{{email}}</span>
+                </button>
+         
+          
+
+      </div>
+      
+
+</mat-toolbar>
+
+

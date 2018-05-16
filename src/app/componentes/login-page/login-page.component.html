@@ -1,0 +1,40 @@
+<div class="row mt-5">
+  <div class="col-md-6 mx-auto">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="text-center">Login</h1>
+        <form class="example-form" (submit)="onSubmitLogin()">
+
+          <mat-form-field >
+            <input matInput placeholder="Email" name="email" id="email" [(ngModel)]="email">
+          </mat-form-field>
+          
+          <mat-form-field>
+            <input matInput placeholder="Password" color="white" type="password" name="password" id="password" [(ngModel)]="password">
+          </mat-form-field>
+
+          <button mat-button >
+            <mat-icon align="left">send</mat-icon>Enviar
+          </button>
+
+          <div>
+            <p> <a routerLink="/resetPassword"> ¿Olvido su contraseña?</a></p>  
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-6 mx-auto mt-2">
+    <div class="card">
+      <div class="card-body justify-content-around">
+        <button class="btn btn-lg btn-facebook"(click)="onClickFacebookLogin()"><i class="fa fa-facebook"></i> facebook</button>
+        <button class="btn btn-lg btn-google" (click)="onClickGoogleLogin()"><i class="fa fa-google-plus"></i> google</button>
+        <button class="btn btn-lg btn-twitter" (click)="onClickTwitterLogin()"><i class="fa fa-twitter"></i> twitter</button>
+      </div>
+    </div>
+  </div>
+</div>
